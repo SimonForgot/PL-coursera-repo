@@ -7,7 +7,6 @@ fun number_in_month(dates:((int*int*int) list),m:int)=
     if null dates then 0 else
     if (#2 (hd dates)) = m then 1+number_in_month((tl dates),m)
     else number_in_month((tl dates),m) 
-    
 fun number_in_months(dates:((int*int*int) list),ms:int list)=
     if (null ms) orelse (null dates)  then 0 else
     number_in_month(dates,(hd ms))+number_in_months(dates,(tl ms))
