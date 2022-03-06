@@ -13,19 +13,30 @@ val test2_1= get_substitutions1 ([["foo"],["there"]], "foo") = []
 val test2_2=get_substitutions1([["Fred","Fredrick"],["Elizabeth","Betty"],["Freddie","Fred","F"]],"Fred")=["Fredrick","Freddie","F"]
 
 val test2_3=get_substitutions1([["Fred","Fredrick"],["Jeff","Jeffrey"],["Geoff","Jeff","Jeffrey"]],"Jeff")=["Jeffrey","Geoff","Jeffrey"] 
-(*
+
 val test3 = get_substitutions2 ([["foo"],["there"]], "foo") = []
+val test3_2=get_substitutions2([["Fred","Fredrick"],["Elizabeth","Betty"],["Freddie","Fred","F"]],"Fred")=["Fredrick","Freddie","F"]
+
+val test3_3=get_substitutions2([["Fred","Fredrick"],["Jeff","Jeffrey"],["Geoff","Jeff","Jeffrey"]],"Jeff")=["Jeffrey","Geoff","Jeffrey"] 
 
 val test4 = similar_names ([["Fred","Fredrick"],["Elizabeth","Betty"],["Freddie","Fred","F"]], {first="Fred", middle="W", last="Smith"}) =
 	    [{first="Fred", last="Smith", middle="W"}, {first="Fredrick", last="Smith", middle="W"},
 	     {first="Freddie", last="Smith", middle="W"}, {first="F", last="Smith", middle="W"}]
 
-val test5 = card_color (Clubs, Num 2) = Black
+val test5_1 = card_color (Clubs, Num 2) = Black
 
-val test6 = card_value (Clubs, Num 2) = 2
+val test5_2 = card_color (Hearts, Num 2) = Red
 
-val test7 = remove_card ([(Hearts, Ace)], (Hearts, Ace), IllegalMove) = []
+val test6_1 = card_value (Clubs, Num 2) = 2
+val test6_2 = card_value (Clubs, Ace) =11
+val test6_3 = card_value (Clubs, Jack) =10
 
+val test7_1 = remove_card ([(Hearts, Ace)], (Hearts, Ace), IllegalMove) = []
+val test7_2 = remove_card ([(Hearts, Ace),(Hearts, Num 3),(Hearts, Jack)], (Hearts, Num 3), IllegalMove) = [(Hearts, Ace),(Hearts, Jack)]
+
+(* val test7_3 = remove_card ([(Hearts, Ace)], (Hearts, Jack), IllegalMove) *)
+
+(*
 val test8 = all_same_color [(Hearts, Ace), (Hearts, Ace)] = true
 
 val test9 = sum_cards [(Clubs, Num 2),(Clubs, Num 2)] = 4
