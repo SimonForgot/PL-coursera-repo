@@ -1,2 +1,2 @@
 # PL-coursera-repo
-Code record from coursera Programming Language
+Code record for coursera Programming Language
