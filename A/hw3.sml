@@ -59,3 +59,13 @@ fun longest_capitalized(stringlist)=
 				     
 fun rev_string(str)=
     (implode o rev o explode)str
+
+fun first_answer f alist=
+    case alist of
+	[]=>raise NoAnswer
+       |x::xs=>case f x of 
+		   NONE=> first_answer f xs
+		  |SOME some=> some
+
+fun all_answers f alist=
+	
